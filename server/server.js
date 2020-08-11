@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 // const MongoClient = require('mongodb').MongoClient;
 // const uri = "mongodb+srv://Jaspreet_kumar:jassi@123@cluster0.1tlhr.mongodb.net/test?retryWrites=true&w=majority";
@@ -13,7 +14,7 @@ const bodyParser = require('body-parser');
 const PORT = 3000
 const api = require('./routes/api')
 const app = express()
-
+app.use(cors())
 app.use(bodyParser.json())
 
 app.use('/api' ,api)
